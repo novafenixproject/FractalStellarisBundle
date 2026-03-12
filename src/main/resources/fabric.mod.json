@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "fractalstellarisbundle",
+  "version": "${version}",
+  "name": "FractalStellarisBundle",
+  "description": "Uma dimensao infinita regida por geometrias fractais e luzes estelares. Desenvolvido para o ecossistema Nova Fenix.",
+  "authors": [
+    {
+      "name": "Gabriel Synapse",
+      "contact": {
+        "sources": ""
+      }
+    }
+  ],
+  "contributors": [
+    "Liborio Conti (Music & Sound Design)"
+  ],
+  "contact": {
+    "Discord Nova Fênix": "https://discord.gg/Zj9Q6YN9K9",
+    "sources": "https://github.com/GabrielSynape/FractalStellaris",
+    "issues": "https://github.com/GabrielSynape/FractalStellaris/issues"
+  },
+  "license": "All Rights Reserved (Code: Read-Only Open Source | Assets: Proprietary)",
+  "icon": "assets/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "novafenixproject.fractalstellaris.client.datagen.FractalDataGenerator"
+    ],
+    "client": [
+      "novafenixproject.fractalstellaris.client.Client"
+    ]
+  },
+  "mixins": [
+    "fractalstellarisbundle.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
