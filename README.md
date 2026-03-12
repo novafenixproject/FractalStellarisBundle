@@ -10,14 +10,14 @@
 
 Este módulo é a camada de interface e renderização do projeto **FractalStellaris**, desenvolvido exclusivamente para o ecossistema da **Nova Fénix**. Ele é responsável por transformar os dados lógicos do servidor em experiências visuais imersivas.
 
-## 📜 Licenciamento e Direitos Autorais
+---
+### 🎨 Propriedade e Direitos de Uso (Assets)
 
-**ESTE MÓDULO É OPEN SOURCE SOB REGIME "READ-ONLY" (APENAS LEITURA).**
+Todos os arquivos contidos em `src/main/resources/assets/` estão protegidos e não podem ser extraídos ou redistribuídos:
 
-* **Código-Fonte:** Disponibilizado para fins de estudo e transparência. **Não é permitida** a modificação, redistribuição ou uso de partes deste código em outros projetos sem autorização prévia.
-* **Assets (Modelos, Texturas e Sons):** Todos os arquivos contidos em `src/main/resources/assets/` são de propriedade exclusiva e **não podem ser extraídos, utilizados ou replicados**.
-* **Dependência:** Este módulo não possui funcionalidade "Standalone". Ele foi projetado para operar exclusivamente em conjunto com o servidor oficial da Nova Fénix.
+- **Modelos 3D, Texturas e Ícones:** São de propriedade exclusiva da **Nova Fénix / Gabriel Synapse**. O uso não autorizado destes arquivos é proibido.
 
+- **Trilhas Sonoras e Áudios:** São obras de **Liborio Conti**, utilizadas sob licença comercial/pessoal limitada. O download deste mod não concede permissão para a extração ou reutilização destas músicas em outros projetos, respeitando o [Contrato de Licenciamento](https://www.no-copyright-music.com/) do autor original.
 ---
 
 ## 🎨 Funcionalidades do Módulo
