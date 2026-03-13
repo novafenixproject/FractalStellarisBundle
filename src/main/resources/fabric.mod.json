@@ -22,7 +22,7 @@
   },
   "license": "All Rights Reserved (Code: Read-Only Open Source | Assets: Proprietary)",
   "icon": "assets/icon.png",
-  "environment": "client",
+  "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
       "novafenixproject.fractalstellaris.client.datagen.FractalDataGenerator"
@@ -37,6 +37,11 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "${minecraft_version}",
+    "bclib": "21.0.x",
+    "wover": "21.0.x",
+    "wunderlib": "21.0.x",
+    "betterend": "21.0.x",
+    "fractalstellarisapi": "*"
   }
 }
