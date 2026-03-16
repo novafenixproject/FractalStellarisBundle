@@ -62,6 +62,9 @@ Este módulo escuta pacotes enviados pelo servidor (`ServerPlayNetworking`) para
 ## 💎 Créditos e Autoria
 
 Desenvolvido por **Gabriel Synapse**.
+
+Musicas **Liborio Conti:** [no-copyright-music](https://www.no-copyright-music.com)
+
 Todos os direitos reservados à marca **Nova Fénix**.
 
 ---

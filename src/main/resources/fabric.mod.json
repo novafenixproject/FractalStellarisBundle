@@ -38,10 +38,6 @@
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}",
-    "bclib": "21.0.x",
-    "wover": "21.0.x",
-    "wunderlib": "21.0.x",
-    "betterend": "21.0.x",
     "fractalstellarisapi": "*"
   }
 }

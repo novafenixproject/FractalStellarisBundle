@@ -4,7 +4,10 @@
   "package": "novafenixproject.fractalstellaris.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "AbstractSoundInstanceAccessor"
+    "DimensionSpecialEffectsAccessor",
+    "AbstractSoundInstanceAccessor",
+    "FractalEffectsMixin",
+    "LevelRendererMixin"
   ],
   "client": [
   ],
