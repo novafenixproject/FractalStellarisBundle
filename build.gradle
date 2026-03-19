@@ -6,6 +6,23 @@ plugins {
 version = project.mod_version
 group = project.maven_group
 
+fabricApi {
+    configureDataGeneration {
+        // Indica onde o DataGen deve colocar os arquivos gerados
+        // Geralmente src/main/generated ou src/main/resources
+        outputDirectory = file("src/main/generated")
+
+        // Opcional: Se você quiser separar os arquivos gerados dos manuais
+        // strictMode = true
+    }
+}
+sourceSets {
+    main {
+        resources {
+            srcDirs += [ "src/main/generated" ]
+        }
+    }
+}
 base {
     archivesName = project.archives_base_name
 }
@@ -41,17 +58,19 @@ processResources {
 
 def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {
-    // ensure that the encoding is set to UTF-8, no matter what the system default is
-    // this fixes some edge cases with special characters not displaying correctly
-    // see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
-    // If Javadoc is generated, this must be specified in that task too.
+
     it.options.encoding = "UTF-8"
     it.options.release = 21
     if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
         it.options.release.set(targetJavaVersion)
     }
 }
-
+tasks.withType(AbstractCopyTask).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+tasks.withType(Copy).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     if (JavaVersion.current() < javaVersion) {
@@ -85,4 +104,7 @@ publishing {
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
     }
+}
+clean {
+    delete = delete.minus(file("src/main/generated"))
 }

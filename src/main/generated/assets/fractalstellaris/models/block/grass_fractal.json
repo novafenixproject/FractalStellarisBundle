@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "fractalstellaris:block/dirt_fractal",
+    "side": "fractalstellaris:block/grass_fractal_side",
+    "top": "fractalstellaris:block/grass_fractal_top"
+  }
+}

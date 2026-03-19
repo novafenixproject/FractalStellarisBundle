@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "fractalstellaris:block/log_fractal_end",
+    "side": "fractalstellaris:block/log_fractal_side"
+  }
+}

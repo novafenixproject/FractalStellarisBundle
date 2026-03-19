@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "fractalstellaris:block/log_fractal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "fractalstellaris:block/log_fractal"
+    },
+    "axis=z": {
+      "model": "fractalstellaris:block/log_fractal",
+      "x": 90
+    }
+  }
+}

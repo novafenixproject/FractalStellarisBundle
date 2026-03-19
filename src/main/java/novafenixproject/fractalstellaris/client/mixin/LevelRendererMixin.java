@@ -19,7 +19,6 @@ public class LevelRendererMixin {
         Minecraft client = Minecraft.getInstance();
         // Verifica se o jogador está na sua dimensão
         if (client.level != null && client.level.dimension().location().getNamespace().equals("fractalstellaris")) {
-            System.out.println("render custom");
             // Executa o seu renderizador customizado
             PoseStack poseStack = new PoseStack();
             poseStack.mulPose(frustumMatrix);

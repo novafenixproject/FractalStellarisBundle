@@ -3,11 +3,14 @@ package novafenixproject.fractalstellaris.client;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.phys.Vec3;
+import novafenixproject.fractalstellaris.api.blocks.FractalBlocks;
 import novafenixproject.fractalstellaris.client.mixin.DimensionSpecialEffectsAccessor;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,5 +38,13 @@ public class Client implements ClientModInitializer {
     public void onInitializeClient() {
         ServerLifecycleEvents.SERVER_STARTED.register(this::onServerStarted);
         DimensionSpecialEffectsAccessor.getEffects().put(id, spaceEffect);
+        //varrendo todos os blocos
+        for(FractalBlocks block : FractalBlocks.values()) {
+            //se tiver transparencia na textura
+            if(block.BLOCK.isCutBlock()) {
+                //diz ao motor recortar a imagem
+                BlockRenderLayerMap.INSTANCE.putBlock(block.BLOCK.getBlock(), RenderType.cutout());
+            }
+        }
     }
 }
