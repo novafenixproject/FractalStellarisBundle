@@ -2,9 +2,12 @@
   "biome.fractalstellaris.fractal_central_zone": "Fractal Central Zone",
   "biome.fractalstellaris.fractal_forest": "Fractal Forest",
   "biome.fractalstellaris.fractal_void": "Fractal Void",
+  "block.fractalstellaris.cobblestone_fractal": "Fractal Cobblestone",
   "block.fractalstellaris.dirt_fractal": "Fractal Dirt",
   "block.fractalstellaris.grass_fractal": "Fractal Grass",
   "block.fractalstellaris.leave_fractal": "Fractal Leave",
   "block.fractalstellaris.log_fractal": "Fractal Log",
-  "block.fractalstellaris.sapling_fractal": "Fractal Sapling"
+  "block.fractalstellaris.planks_fractal": "Fractal Planks",
+  "block.fractalstellaris.sapling_fractal": "Fractal Sapling",
+  "block.fractalstellaris.stone_fractal": "Fractal Stone"
 }

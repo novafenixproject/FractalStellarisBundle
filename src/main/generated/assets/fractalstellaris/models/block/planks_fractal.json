@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "fractalstellaris:block/planks_fractal"
+  }
+}

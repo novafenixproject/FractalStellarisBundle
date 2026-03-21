@@ -17,11 +17,11 @@
   ],
   "contact": {
     "Discord Nova Fênix": "https://discord.gg/Zj9Q6YN9K9",
-    "sources": "https://github.com/GabrielSynape/FractalStellaris",
-    "issues": "https://github.com/GabrielSynape/FractalStellaris/issues"
+    "sources": "https://github.com/novafenixproject/FractalStellarisBundle",
+    "issues": "https://github.com/GabrielSynape/FractalStellarisBundle/issues"
   },
   "license": "All Rights Reserved (Code: Read-Only Open Source | Assets: Proprietary)",
-  "icon": "assets/icon.png",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
@@ -38,6 +38,6 @@
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}",
-    "fractalstellarisapi": "*"
+    "fractalstellarisapi": "1.0-SNAPSHOT"
   }
 }

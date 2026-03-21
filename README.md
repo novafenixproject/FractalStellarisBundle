@@ -37,10 +37,6 @@ O módulo segue o padrão de separação rigorosa do Fabric para evitar vazament
 
 Definidos em `Client.java`:
 
-* `EntityRendererRegistry`: Registro dos renderizadores das novas entidades.
-* `BlockRenderLayerMap`: Definição de transparências para blocos de cristal e gases.
-* `ParticleFactoryRegistry`: Registro de partículas estelares customizadas.
-
 ### 📡 Networking (S2C)
 
 Este módulo escuta pacotes enviados pelo servidor (`ServerPlayNetworking`) para disparar eventos visuais que não afetam a lógica de jogo, como:
@@ -51,14 +47,6 @@ Este módulo escuta pacotes enviados pelo servidor (`ServerPlayNetworking`) para
 
 ---
 
-## ⚠️ Avisos Técnicos
-
-1. **Compatibilidade:** Este módulo é otimizado para o hardware do cliente. Evite adicionar lógicas pesadas no `WorldTick` do cliente para não reduzir o FPS.
-2. **Assets Hardcoded:** Algumas referências de texturas estão vinculadas diretamente ao `modid` interno. Alterar o nome do projeto quebrará todos os modelos.
-3. **Segurança:** Nenhuma lógica crítica (como permissões ou spawn) deve ser processada aqui. O cliente apenas "desenha" o que o servidor autoriza.
-
----
-
 ## 💎 Créditos e Autoria
 
 Desenvolvido por **Gabriel Synapse**.
@@ -66,10 +54,3 @@ Desenvolvido por **Gabriel Synapse**.
 Musicas **Liborio Conti:** [no-copyright-music](https://www.no-copyright-music.com)
 
 Todos os direitos reservados à marca **Nova Fénix**.
-
----
-
-### Dica para o seu projeto:
-
-No seu `build.gradle`, você pode configurar o Gradle para não incluir as pastas de código-fonte no `.jar` final, ou usar uma ferramenta de **Obfuscação** se quiser proteger ainda mais a lógica interna, mesmo que o código no GitHub seja aberto.
-
