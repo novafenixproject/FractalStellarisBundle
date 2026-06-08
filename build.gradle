@@ -1,0 +1,66 @@
+apply plugin: 'java-library'
+apply plugin: 'fabric-loom'
+apply plugin: 'maven-publish'
+loom {
+    // Isso força o Loom a resolver os nomes corretamente entre os módulos
+    interfaceInjection {
+        enableDependencyInterfaceInjection = false
+    }
+
+    // Adicione este bloco para o Datagen
+    runs {
+        datagen {
+            inherit client
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${project.rootProject.file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=fractalstellaris"
+
+            // O SEGREDO ESTÁ AQUI:
+            ideConfigGenerated = true
+            runDir "build/datagen"
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += [ "src/main/generated" ]
+        }
+    }
+}
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url = "https://maven.kyrptonaught.dev"}
+}
+
+dependencies {
+    implementation project(path: ':common')
+}
+
+// configure the maven publication
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            artifactId = project.archives_base_name
+            from components.java
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
+        // Notice: This block does NOT have the same function as the block in the top level.
+        // The repositories here will be used for publishing your artifact, not for
+        // retrieving dependencies.
+    }
+}
+clean {
+    delete = delete.minus(file("src/main/generated"))
+}

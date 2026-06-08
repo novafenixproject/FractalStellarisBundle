@@ -1,0 +1,7 @@
+
+.idea
+build
+src/main/resources/assets
+src/main/genereted
+*.class
+*.py
