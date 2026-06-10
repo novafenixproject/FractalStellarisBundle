@@ -1,22 +1,23 @@
 apply plugin: 'java-library'
 apply plugin: 'fabric-loom'
 apply plugin: 'maven-publish'
+
+base {
+    archivesName = project.archives_base_name
+}
+
 loom {
-    // Isso força o Loom a resolver os nomes corretamente entre os módulos
     interfaceInjection {
         enableDependencyInterfaceInjection = false
     }
 
-    // Adicione este bloco para o Datagen
     runs {
         datagen {
             inherit client
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${project.rootProject.file("src/main/generated")}"
-            vmArg "-Dfabric-api.datagen.modid=fractalstellaris"
-
-            // O SEGREDO ESTÁ AQUI:
+            vmArg "-Dfabric-api.datagen.output-dir=${project.file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=fractalstellarisbundle"
             ideConfigGenerated = true
             runDir "build/datagen"
         }
@@ -25,26 +26,32 @@ loom {
 
 sourceSets {
     main {
-        resources {
-            srcDirs += [ "src/main/generated" ]
-        }
+        resources { srcDirs += [ "src/main/generated" ] }
+
+        // 🟢 O PULO DO GATO: Injeta as classes e os recursos (JSON) do comum
+        // direto no Classpath do cliente, sem que o Loom saiba ou tente remapear o comum!
+        compileClasspath += project(':common').sourceSets.main.output
+        runtimeClasspath += project(':common').sourceSets.main.output
     }
-}
-base {
-    archivesName = project.archives_base_name
 }
 
 repositories {
     mavenCentral()
     mavenLocal()
-    maven { url = "https://maven.kyrptonaught.dev"}
+    maven { url = "https://maven.kyrptonaught.dev" }
 }
 
 dependencies {
-    implementation project(path: ':common')
+    minecraft "com.mojang:minecraft:1.21.1"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.18.4"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.116.9+1.21.1"
+
+    // 🟢 A SINTAXE OFICIAL E COMPATÍVEL COM GRADLE 8+ PARA MULTI-MÓDULOS:
+    compileOnly project(':common')
+
 }
 
-// configure the maven publication
 publishing {
     publications {
         create("mavenJava", MavenPublication) {
@@ -52,15 +59,25 @@ publishing {
             from components.java
         }
     }
-
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
     }
 }
+
 clean {
     delete = delete.minus(file("src/main/generated"))
+}
+
+processResources {
+    // 1. Monitora as propriedades para forçar o Gradle a atualizar se elas mudarem
+    inputs.property "version", project.version
+    inputs.property "minecraft_version", "1.21.1"
+    inputs.property "loader_version", "0.18.4"
+    filteringCharset "UTF-8"
+
+    // 2. Faz a mágica de injetar as variáveis dentro do arquivo json do Fabric
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version,
+                "minecraft_version": "1.21.1",
+                "loader_version": "0.18.4"
+    }
 }

@@ -32,12 +32,11 @@
     ]
   },
   "mixins": [
-    "fractalstellarisbundle.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.18.4",
     "fabric-api": "*",
-    "minecraft": "${minecraft_version}",
-    "fractalstellariscommon": "1.0.0-SNAPSHOT-1"
+    "minecraft": "1.21.1",
+    "fractalstellariscommon": "*"
   }
 }
