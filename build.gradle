@@ -10,6 +10,11 @@ loom {
     interfaceInjection {
         enableDependencyInterfaceInjection = false
     }
+    mods {
+        "fractalstellarisbundle" {
+            sourceSet sourceSets.main
+        }
+    }
 
     runs {
         datagen {
@@ -25,6 +30,7 @@ loom {
 }
 
 sourceSets {
+
     main {
         resources { srcDirs += [ "src/main/generated" ] }
 

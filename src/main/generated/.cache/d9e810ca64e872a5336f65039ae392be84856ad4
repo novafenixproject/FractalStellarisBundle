@@ -1,3 +1,9 @@
-// 1.21.1	2026-06-09T23:12:37.44317893	FractalStellarisBundle/Model Definitions
+// 1.21.1	2026-06-11T17:35:10.889486199	FractalStellarisBundle/Model Definitions
+dc98d17d5d47ce061a75446c96704c3f1fb7cf54 assets/fractalstellaris/blockstates/galvanized_rock_block.json
 f9fcbe5c818594377bc74037167d16718ee11a9a assets/fractalstellaris/models/item/stellarite_block.json
+dde8e9e17b7ae614286c2c9fcfdb3829a8713209 assets/fractalstellaris/models/item/stellarite_polished_block.json
+b6b58606829e21226c9cdfb34c400541da156dee assets/fractalstellaris/models/item/galvanized_rock_block.json
+c6bef6961d6162598e162580e3d350848cfdd4cc assets/fractalstellaris/blockstates/stellarite_ore.json
+c9ed80492de5b70b51ae38781c4c65690dc7bf67 assets/fractalstellaris/blockstates/stellarite_polished_block.json
+ac45abf782a8a6e1b4c238c9f9332fed3f28cb39 assets/fractalstellaris/models/item/stellarite_ore.json
 3ae6a25b79a3ca63d43afb1e959d1abadac98e83 assets/fractalstellaris/blockstates/stellarite_block.json

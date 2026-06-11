@@ -1,0 +1,12 @@
+{
+  "block.fractalstellaris.galvanized_rock_block": "Rocha Galvanizada",
+  "block.fractalstellaris.stellarite_block": "Bloco de Stellarite",
+  "block.fractalstellaris.stellarite_ore": "Minério de Stellarite",
+  "block.fractalstellaris.stellarite_polished_block": "Bloco de Stellarite Polido",
+  "item.fractalstellaris.galvanized_rock_block": "Rocha Galvanizada",
+  "item.fractalstellaris.raw_stellarite": "Stellarite Bruto",
+  "item.fractalstellaris.stellarite_block": "Bloco de Stellarite",
+  "item.fractalstellaris.stellarite_ore": "Minério de Stellarite",
+  "item.fractalstellaris.stellarite_polished_block": "Bloco de Stellarite Polido",
+  "itemGroup.fractalstellaris.nature_tab": "Natureza FractalStellaris"
+}
